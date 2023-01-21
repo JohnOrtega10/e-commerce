@@ -1,38 +1,185 @@
-.App {
-  text-align: center;
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
+.image{
+  display: block;
+  height: 250px;
+  object-fit: contain;
+  padding: 2rem 1rem;
+  background-color: inherit;
+} 
+
+.image--transition{
+  position: absolute;
+  opacity: 0;
+  transition: .3s;
+}
+
+.link{
+  text-decoration: none;
+  color: inherit;
+}
+
+.link:hover{
+  color: inherit;
+}
+
+.link:hover .image--transition{
+  opacity: 1;
+}
+
+.cart__total-price{
+  position: sticky;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.sticky{
+  position: sticky;
+  top: 1rem;
+}
+
+.carousel{
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel__gallery{
+  display: flex;  
+  width: 300%;
+  padding: 0;
+  transition: .5s ease-in-out;
+}
+
+.carousel__item{
+  list-style: none;
+  width: 100%;
+  padding: 0 3rem;
+}
+
+.carousel__img{
+  width: 100%;
+  object-fit: contain;
+}
+
+.btn-back{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.btn-next{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.preview{
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  width: 50%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.preview-item{
+  list-style: none;
+  cursor: pointer;
+}
+
+.preview-img{
+  width: 100%;
+  object-fit: contain;
+}
+
+.text-justify{
+  /* text-align: justify; */
+}
+
+.spinner{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5000;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.carousel-related__container{
+  width: 100%;
+  position: relative;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.carousel-related{
+  width: 80%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+ }
+
+.carousel-related__slide{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100%;
+  height: 100%;
+  transition: .5s ease-in-out;
+  
+}
+
+.carousel-related__circles-btns{
+  width: 100%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: .1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.carousel-related__circles-btn{
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.shop_card{
+  position: relative;
 }
+
+.shop__button{
+  position: absolute;
+  bottom: 16%;
+  right: 28px;
+}
+ 
+.input, .select:focus{
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+.select{
+  cursor: pointer;
+}
+
+.accordion-button, .navbar-toggler:focus:not(:focus-visible) {
+  outline: 0;
+  box-shadow: none;
+}
+
+.card:hover .card-link{
+  text-decoration: underline;
+}
+
+@media only screen and (min-width: 768px) {
+  .carousel-related{
+    width: 90%;
+   }
+}
+
